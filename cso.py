@@ -22,16 +22,15 @@ class CSO:
 				velocities = vel[idx][:num_dimensions], 
 				vmax = v_max
 			))
-			score_cats={}
+		score_cats={}
 			
 		for _ in range(num_iterations):
 			#evaluate
-                        ind=0
                         
 			for cat in cat_population:
                                 score, pos = cat.evaluate(function)
-                                score_cats[ind]=score
-                                ind+=1
+                                score_cats[cat]=max(score_cats.get(cat,0),score)
+				
                                 if score < best:
                                         best = score
                                         best_pos = pos.copy()
