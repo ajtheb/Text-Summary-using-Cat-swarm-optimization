@@ -264,7 +264,28 @@ def main():
 				best_pos,
 				avg
 			])
-	print(len(score_cats))
+
+
+			
+	
+	#print(type(score_cats))
+
+
+
+	print('SUMMARY')
+	print('')
+                        
+	
+	ind=0
+        
+	for s,v in score_cats.items():
+            if(v>6):
+                print(sentences[ind])
+
+            ind+=1        
+                
+            
+	
 	
 	data = np.array(all_results)
 	dataset = pd.DataFrame({
